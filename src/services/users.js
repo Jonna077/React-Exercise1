@@ -1,3 +1,4 @@
+import { comments } from "../data/comments";
 import { users as data } from "../data/users";
 
 //private
@@ -8,7 +9,7 @@ export function getAllUsers() {
   return [...users];
 }
 
-function getUserById(id) {
+export function getUserById(id) {
   //get single user by id
   return users.find((user) => user.id === id);
 }
@@ -27,7 +28,8 @@ export function updateUser(id, userInfo) {
   });
 }
 
-function addUser(userInfo) {
+export function addUser(userInfo) {
   // add user (userInfo is an object which can optionally contain properties of a user)
   // use generateId function and pass users array as the argument to generate a unique id.
+  return users.push(userInfo);
 }
